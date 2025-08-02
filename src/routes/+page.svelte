@@ -1,2 +1,7 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+	import { Page } from "$lib/Page"
+</script>
+
+<Page title="Pokémon in D&D">
+	<p>This may eventually serve as a hub for any Pokémon D&D resources.</p>
+</Page>
