@@ -1,0 +1,27 @@
+name: Deployment
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  site-deploy:
+    name: Site Deploy
+    runs-on: ubuntu-latest
+    env:
+      ENV: prod
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          cname: pokemon5e.com

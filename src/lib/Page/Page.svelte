@@ -29,6 +29,14 @@
 		margin-block: 4em;
 	}
 
+	header {
+		margin-block-end: 2em;
+	}
+
+	h1 {
+		font-weight: bold;
+	}
+
 	.container {
 		max-inline-size: 37.5rem;
 		margin: auto;
